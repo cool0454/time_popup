@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+       body { font-size: 13px; color:#000000;}
+    </style>
+    <script language='javascript'>
+        function setCookie(name, value, expiredays){
+            var todayDate = new Date();
+            todayDate.setDate(todayDate.getDate() + expiredays);
+            document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }
+        function closePop(){
+            //expiredays의 1은 하루를 의미한다, 일주일은 7, 1년은 365로 입력
+            setCookie("closeLayerPop","closeLayerPop",1);
+            window.close();
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="close_pop">
+    <label><input type="checkbox" onClick="closePop();">오늘하루 열지않음</label>
+    <a href="#" onClick="closePop();"><img src="../_img/popup/btnClose.gif" alt="창닫기"></a>
+</div>
+
+</body>
+</html>
